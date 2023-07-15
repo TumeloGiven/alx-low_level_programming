@@ -15,7 +15,7 @@ int main(void)
 	putchar(lowc);
 
 	for (lowc = 'A'; lowc <= 'Z'; lowc++)
-	putchar(lowc)
+	putchar(lowc);
 	putchar(lowc);
 	return (0);
 }
