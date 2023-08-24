@@ -3,11 +3,11 @@
 #include "lists.h"
 
 /**
- * add_node - This function adds a new node at the beginning of a linked list
- * @head: This is a double pointer to the list_t list
+ * add_node - Function adds a new node at the beginning of a linked list
+ * @head: A double pointer to the list_t list
  * @str: A string to add in the node
  *
- * Return: Address of the new element, or NULL if  fails
+ * Return: Address of the new element, or NULL if it fails
  */
 list_t *add_node(list_t **head, const char *str)
 {
