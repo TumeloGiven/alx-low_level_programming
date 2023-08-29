@@ -1,21 +1,17 @@
-#include "list.h"
+#include "lists.h"
 
 /**
- * print_listint - Prints all the elements of a listint_t list.
- * @h: A pointer to the head of the list.
- *
- * Return: The number of nodes.
+ * free_listint - Frees a listint_t list.
+ * @head: A pointer to the head of the list.
  */
-size_t print_listint(const listint_t *h)
+void free_listint(listint_t *head)
 {
-	size_t c = 0;
+	listint_t *temp;
 
-	while (h != NULL)
+	while (head != NULL)
 	{
-		printf("%d\n", h->n);
-		h = h->next;
-		c++;
+		temp = head;
+		head = head->next;
+		free(temp);
 	}
-
-	return (c);
 }
