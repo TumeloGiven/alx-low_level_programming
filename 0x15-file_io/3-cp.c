@@ -65,8 +65,7 @@ int main(int argc, char *argv[])
 	read_bytes = read(source_fd, file_buffer, 1024);
 	dest_fd = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 
-	while (read_bytes > 0)
-	{
+	do {
 		if (source_fd == -1 || read_bytes == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -84,7 +83,7 @@ int main(int argc, char *argv[])
 
 		read_bytes = read(source_fd, file_buffer, 1024);
 		dest_fd = open(argv[2], O_WRONLY | O_APPEND);
-	}
+	} while (read_bytes > 0);
 
 	free(file_buffer);
 	close_file(source_fd);
